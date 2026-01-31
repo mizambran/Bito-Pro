@@ -1,0 +1,98 @@
+/* App.css */
+:root {
+  /* --- Variables LIGHT MODE (Suave) --- */
+  --bg-body: #f3f4f6;       /* Gris muy suave, no blanco */
+  --bg-card: #ffffff;       /* Blanco puro para tarjetas */
+  --text-primary: #111827;  /* Casi negro, legible */
+  --text-secondary: #4b5563; /* Gris intermedio */
+  --border-color: #e5e7eb;  /* Borde sutil */
+  --input-bg: #f9fafb;      /* Fondo de inputs */
+  --highlight-bg: #f3f4f6;  /* Fondo para hovers */
+}
+
+[data-bs-theme="dark"] {
+  /* --- Variables DARK MODE (Binance Style) --- */
+  --bg-body: #0b0e11; 
+  --bg-card: #1e2329; 
+  --text-primary: #eaecef;
+  --text-secondary: #848e9c;
+  --border-color: #2b3139;
+  --input-bg: #0b0e11;
+  --highlight-bg: #2b3139;
+}
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Tarjetas */
+.card-custom {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.card-header-custom {
+  background-color: transparent;
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem;
+}
+
+/* Tabla */
+.table-custom th {
+  background-color: var(--bg-card) !important;
+  color: var(--text-secondary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table-custom td {
+  background-color: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  vertical-align: middle;
+}
+
+.table-custom tr:hover td {
+  background-color: var(--highlight-bg) !important;
+}
+
+/* Inputs */
+.form-control-custom {
+  background-color: var(--input-bg) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.form-control-custom:focus {
+  border-color: #fcd535;
+  box-shadow: 0 0 0 2px rgba(252, 213, 53, 0.2);
+}
+
+/* Modal Customization */
+.modal-custom .modal-content {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+.modal-custom .modal-header, .modal-custom .modal-footer {
+  border-color: var(--border-color);
+}
+.close-btn-custom {
+  filter: invert(var(--invert-value)); /* Truco para invertir color de la X segun tema */
+}
+[data-bs-theme="dark"] { --invert-value: 1; }
+[data-bs-theme="light"] { --invert-value: 0; }
+
+.text-label {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
